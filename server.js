@@ -53,6 +53,10 @@ app.get('/bad', (req, res) => {
     })
 })
 
-app.listen(3000,() => {
-    console.log('Server is up and on port 3000');
+//Setup for heroku
+const port = process.env.PORT || 3000;
+
+// End heroku
+app.listen(port,() => {
+    console.log(`Server is up and on port ${port}`);
 });
