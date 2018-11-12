@@ -53,6 +53,12 @@ app.get('/bad', (req, res) => {
     })
 })
 
+app.get('/project', (request, response) => {
+    response.render('project.hbs', {
+        pageTitle: 'Project Page',
+        message: 'This is the Project Page'
+    });
+})
 //Setup for heroku
 const port = process.env.PORT || 3000;
 

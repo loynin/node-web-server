@@ -24,5 +24,19 @@
     c. Remove heroku if by running `heroku keys:remove`
     d. ssh to heroku server by `ssh -v git@heroku.com`
 
-    Heroku: setup:
+    e. Heroku: setup:
+
+        on the app file `server.js` change the app start port to the variable such as this : 
+                `//Setup for heroku
+                const port = process.env.PORT || 3000;
+                // End heroku
+                app.listen(port,() => {
+                    console.log(`Server is up and on port ${port}`);
+                });`
+        Setup script on `package.json` with the `"start": "node server.js"` to tell the heroku how to start the app.
     
+    f. add change to commit by the following: `git add .` // . means add all changed
+    g. push git to the remote by `git push`
+    h. create heroku git repository `heroku create`
+    i. push git to heroku by `git push heroku`
+    j. Run `heroku open` to open the live website from heroku
